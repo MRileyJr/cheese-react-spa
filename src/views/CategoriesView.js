@@ -33,15 +33,11 @@ class CategoriesView extends Component {
     return (
       <Container>
         <Row>
-            <CategoryForm>
-              addCategory = {this.addToCategories}
-            </CategoryForm> 
+            <CategoryForm addCategory = {this.addToCategories} />
         </Row>
         <br />
         <Row>
-            <CategoriesList>
-              categories = {categories}
-            </CategoriesList>
+            <CategoriesList categories = {categories} />
         </Row>
       </Container>
     );

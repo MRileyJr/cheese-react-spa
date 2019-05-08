@@ -8,7 +8,7 @@ import MenusView from "./views/MenusView";
 
 const Routes = () => (
     <Switch>
-        <Route exact path="/home" component={HomeView}/>
+        {/* <Route exact path="/" component={HomeView}/> */}
         <Route exact path="/cheeses" component={CheesesView}/>
         <Route exact path="/categories" component={CategoriesView}/>
         <Route exact path="/menus" component={MenusView}/>

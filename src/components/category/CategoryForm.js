@@ -17,7 +17,7 @@ class CategoryForm extends Component {
     // the value attribute of the input that was changed
     const { value } = event.target;
     // true or false based on whether the value is invalid
-    const disabled = value.legnth < 3 || value.legnth > 15;
+    const disabled = value.length < 3 || value.length > 15;
 
     this.setState({ name: value, disabled });
   };

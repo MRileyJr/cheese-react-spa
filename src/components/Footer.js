@@ -13,6 +13,7 @@ const Footer = () => (
           href="https://github.com/MRileyJr"
         >
           {/* TODO: sign your name */}
+          MRileyJr
         </a>
       </Col>
     </Row>

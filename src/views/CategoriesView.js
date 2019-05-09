@@ -22,14 +22,11 @@ class CategoriesView extends Component {
   addToCategories = category =>
     this.setState(state => {
       const { categories } = state;
-
-      const newCategory = [category]
-      return {categories:[...categories, newCategory]};
+      return {categories:[category, ...categories]};
     });
 
   render() {
     const { categories } = this.state;
-
     return (
       <Container>
         <Row>

@@ -9,8 +9,8 @@ const CheeseNav = () => (
       <LinkContainer exact to="/">
         <Nav.Link>Home</Nav.Link>
       </LinkContainer>
-      <LinkContainer exact to="/menu">
-        <Nav.Link>Menu</Nav.Link>
+      <LinkContainer exact to="/menus">
+        <Nav.Link>Menus</Nav.Link>
       </LinkContainer>
       <LinkContainer exact to="/cheeses">
         <Nav.Link>Cheeses</Nav.Link>

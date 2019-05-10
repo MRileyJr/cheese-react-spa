@@ -3,7 +3,7 @@ import {Switch, Route} from "react-router-dom";
 
 import CheesesView from "./views/CheesesView";
 import CategoriesView from "./views/CategoriesView";
-import HomeView from "./views/HomeView";
+//import HomeView from "./views/HomeView";
 import MenusView from "./views/MenusView";
 import MenuView from "./views/MenuView";
 

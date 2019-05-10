@@ -28,13 +28,13 @@ class MenuForm extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     const { name } = this.state;
-    const { addToMenus } = this.props;
+    const { addMenu } = this.props;
 
     const res = await request.post("/menus", { name });
     const menu = res.data;
 
     //send the new menu back to the <CategoriesView> Parent
-    addToMenus(menu);
+    addMenu(menu);
 
     this.resetForm();
   };
@@ -73,7 +73,7 @@ class MenuForm extends Component {
 }
 
 MenuForm.propTypes = {
-  addToMenus: PropTypes.func.isRequired
+  addMenu: PropTypes.func.isRequired
 };
 
 export default MenuForm;

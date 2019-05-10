@@ -13,17 +13,18 @@ class MenusView extends Component {
   };
 
   async componentDidMount() {
-    // TODO: request the menus from the API
-    // TODO: update state with the menus
+    // meaning execute an HTTP GET request at api-domain/categories
+    const res = await request.get("/menus");
+    const menus = res.data; // the response data is the category collection list
+
+    this.setState({menus});
   }
 
-  addToMenus = newMenu => {
-    // TODO: implement this method
-      // it should merge the new menu with the existing menus
-
-    // which setState approach should you use?
-    // are you using current state to set state?
-  };
+  addToMenus = newMenu => 
+  this.setState(state => {
+    const { menues } = state;
+    return {menues: [newMenu, ...menues]};
+  });
 
   render() {
     const { menus } = this.state;
@@ -32,17 +33,13 @@ class MenusView extends Component {
       <Container>
         <Row>
           <Col>
-            <MenuForm
-              {/* TODO: complete the props for this component */}
-            />
+            <MenuForm addToMenus = {this.addToMenus} />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <MenusList
-              {/* TODO: complete the props for this component */}
-            />
+            <MenusList menues = {menus} />
           </Col>
         </Row>
       </Container>

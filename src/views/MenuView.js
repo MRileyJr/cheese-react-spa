@@ -40,7 +40,7 @@ class MenuView extends Component {
 
       // TODO: provide the filter() callback
       // should return true for any cheese whos ID DOES NOT match the cheeseID
-      const cheeses = cheeses.filter(cheese => cheese.id !== cheeseID);
+      const cheeses = state.cheeses.filter(cheese => cheese.id !== cheeseID);
 
       return { menu: { ...menu, cheeses } };
 
@@ -50,7 +50,7 @@ class MenuView extends Component {
     const { menu } = this.state;
     // TODO: make an API request to remove the cheese from the menu
     // check the API reference for the correct endpoint
-    const res = await request.delete("/menus/" + cheeseID);   // + menu + "cheeses"
+    const res = await request.delete("/menus/" + menu.id + "/cheeses/" + cheeseID); 
 
     // if the request failed exit early
     if (res.status !== 201) {
@@ -78,7 +78,7 @@ class MenuView extends Component {
           <Col>
             <AddMenuCheeseForm
             menuID = {menu.id}
-            currentCheeses = {menu.CheesesList}   //menu.cheeses
+            currentCheeses = {menu.cheeses} 
             addCheese = {this.addToCheeses}
             //   {/* TODO: complete the props */}
             />
@@ -88,7 +88,7 @@ class MenuView extends Component {
         <Row>
           <Col>
             <CheesesList
-            cheeses = {menu.CheesesList}    //menu.cheeses
+            cheeses = {menu.cheeses} 
             removeCheese = {this.deleteCheese}
             //   {/* TODO: complete the props */}
             />

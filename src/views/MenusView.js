@@ -22,8 +22,8 @@ class MenusView extends Component {
 
   addToMenus = newMenu => 
   this.setState(state => {
-    const { menues } = state;
-    return {menues: [newMenu, ...menues]};
+    const { menus } = state;
+    return {menus: [newMenu, ...menus]};
   });
 
   render() {
@@ -33,13 +33,13 @@ class MenusView extends Component {
       <Container>
         <Row>
           <Col>
-            <MenuForm addToMenus = {this.addToMenus} />
+            <MenuForm addMenu = {this.addToMenus} />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <MenusList menues = {menus} />
+            <MenusList menus = {menus} />
           </Col>
         </Row>
       </Container>

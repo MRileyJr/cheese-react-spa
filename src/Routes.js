@@ -13,7 +13,7 @@ const Routes = () => (
         <Route exact path="/cheeses" component={CheesesView}/>
         <Route exact path="/categories" component={CategoriesView}/>
         <Route exact path="/menus" component={MenusView}/>
-        <Route exact path="/menu/menuID" component={MenuView}/>
+        <Route exact path="/menus/:menuID" component={MenuView}/>
     </Switch>
 );
 

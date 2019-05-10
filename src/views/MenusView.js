@@ -14,8 +14,8 @@ class MenusView extends Component {
 
   async componentDidMount() {
     // meaning execute an HTTP GET request at api-domain/categories
-    const res = await request.get("/menus");
-    const menus = res.data; // the response data is the category collection list
+    const menuRes = await request.get("/menus");
+    const menus = menuRes.data; // the response data is the category collection list
 
     this.setState({menus});
   }

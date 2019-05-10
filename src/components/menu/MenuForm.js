@@ -30,7 +30,7 @@ class MenuForm extends Component {
     const { name } = this.state;
     const { addToMenus } = this.props;
 
-    const res = await request.post("./menus", { name });
+    const res = await request.post("/menus", { name });
     const menu = res.data;
 
     //send the new menu back to the <CategoriesView> Parent

@@ -20,7 +20,7 @@ const filterAvailableCheeses = (currentCheeses, allCheeses) =>
 const createCheeseOption = cheese => (
     <option 
       key ={cheese.id} 
-      value= {category.id}
+      value= {cheese.id}
     >
       {cheese.name}
     </option>
@@ -75,11 +75,13 @@ class AddMenuCheeseForm extends Component {
     const { currentCheeses } = this.props;
     const { cheeseID, allCheeses } = this.state;
 
-    const availableCheeses = []; // TODO: derive the available cheeses with the utility function
+    // TODO: derive the available cheeses with the utility function
+    const availableCheeses = [].filterAvailableCheeses(currentCheeses, allCheeses);
+
 
     // TODO: complete the if statement
     // render null if the available cheeses list is empty
-    if () {
+    if (availableCheeses == "") {
       return null;
     }
 
@@ -93,10 +95,11 @@ class AddMenuCheeseForm extends Component {
             <Form.Control
               as="select"
               name="cheeseID"
-              {/* TODO: complete the props for this component */}
+              value={cheeseID}
+              onChange={this.handleInputChange}
             >
               <option value="">Select a Cheese</option>
-              {/* TODO: transform availableCheeses into option elements */}
+              {availableCheeses.map(createCheeseOption)}
             </Form.Control>
           </Form.Group>
           <Button
@@ -114,10 +117,9 @@ class AddMenuCheeseForm extends Component {
 }
 
 AddMenuCheeseForm.propTypes = {
-  // TODO: complete the prop types
-  //addCheese
-  //menuID
-  //currentCheeses
+  currentCheeses: PropTypes.arrayOf(cheeseType).isRequired,
+  addCheese: PropTypes.func.isRequired,
+  menuID: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default AddMenuCheeseForm;

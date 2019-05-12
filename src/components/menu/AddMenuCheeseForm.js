@@ -46,7 +46,7 @@ class AddMenuCheeseForm extends Component {
     const { value } = event.target;
     //const disabled = value.length < 3 || value.length > 15;
 
-    this.setState({ cheeseID: value, disabled });
+    this.setState({ cheeseID: value });     //, disabled
   }
 
   handleSubmit = async event => {

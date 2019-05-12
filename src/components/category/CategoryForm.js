@@ -30,7 +30,7 @@ class CategoryForm extends Component {
     const { name } = this.state;
     const { addCategory } = this.props;
 
-    const res = await request.post("./categories", { name });
+    const res = await request.post("/categories", { name });
     const category = res.data;
 
     //send the new category back to the <CategoriesView> Parent

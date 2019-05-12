@@ -44,7 +44,7 @@ class AddMenuCheeseForm extends Component {
 
   handleInputChange = event => {
     const { value } = event.target;
-    const disabled = value.length < 3 || value.length > 15;
+    //const disabled = value.length < 3 || value.length > 15;
 
     this.setState({ cheeseID: value, disabled });
   }

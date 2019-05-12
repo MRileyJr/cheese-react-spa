@@ -45,7 +45,7 @@ const CheesesList = (props) => {
           </tr>
         </thead>
         <tbody>
-            {cheeses.map(cheeses => createCheeseRow(cheeses, removeCheese))}
+            {cheeses.map(cheese => createCheeseRow(cheese, removeCheese))}
         </tbody>
       </Table>
     </Container>

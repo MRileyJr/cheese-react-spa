@@ -46,7 +46,7 @@ class AddMenuCheeseForm extends Component {
     const { value } = event.target;
     const disabled = value.length < 3 || value.length > 15;
 
-    this.setState({ name: value, disabled });
+    this.setState({ cheeseID: value, disabled });
   }
 
   handleSubmit = async event => {
@@ -55,7 +55,7 @@ class AddMenuCheeseForm extends Component {
     const { allCheeses, cheeseID } = this.state;
 
     // check the API reference to see how to add a cheese to a menu
-    const res = await request.post("./menus/" + menuID + "/cheeses" );
+    const res = await request.post("/menus/" + menuID + "/cheeses", {cheeseID} );
 
     // if the request failed exit early
     if (res.status !== 201) {
@@ -118,7 +118,7 @@ class AddMenuCheeseForm extends Component {
 AddMenuCheeseForm.propTypes = {
   currentCheeses: PropTypes.arrayOf(cheeseType).isRequired,
   addCheese: PropTypes.func.isRequired,
-  menuID: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  //menuID: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default AddMenuCheeseForm;

@@ -54,7 +54,6 @@ class AddMenuCheeseForm extends Component {
     const { menuID, addCheese } = this.props;
     const { allCheeses, cheeseID } = this.state;
 
-    // TODO: make an API request using the correct endpoint and data
     // check the API reference to see how to add a cheese to a menu
     const res = await request.post("./menus/" + menuID + "/cheeses" );
 
@@ -76,12 +75,12 @@ class AddMenuCheeseForm extends Component {
     const { cheeseID, allCheeses } = this.state;
 
     // TODO: derive the available cheeses with the utility function
-    const availableCheeses = [].filterAvailableCheeses(currentCheeses, allCheeses);
+    const availableCheeses = filterAvailableCheeses(currenrCheeses, allCheeses);
+    //filterAvailableCheeses(currentCheeses, allCheeses);
 
 
-    // TODO: complete the if statement
     // render null if the available cheeses list is empty
-    if (availableCheeses == "") {
+    if (availableCheeses === "") {
       return null;
     }
 

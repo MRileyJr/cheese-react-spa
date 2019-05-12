@@ -75,7 +75,7 @@ class AddMenuCheeseForm extends Component {
     const { cheeseID, allCheeses } = this.state;
 
     // TODO: derive the available cheeses with the utility function
-    const availableCheeses = filterAvailableCheeses(currenrCheeses, allCheeses);
+    const availableCheeses = filterAvailableCheeses(currentCheeses, allCheeses);
     //filterAvailableCheeses(currentCheeses, allCheeses);
 
 
